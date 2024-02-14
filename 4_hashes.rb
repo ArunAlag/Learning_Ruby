@@ -13,7 +13,7 @@
  - The key of hash can have anything such as digits, strings and even symbols can be used. More often than not, we use symbols in hashes because of it's memory efficiencies  
 =end
 
-# CREATE HASH
+# CREATE HASH => Way 1
 puts "Hash Creation \n"
 person = {
     :name => "Arun",
