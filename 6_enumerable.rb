@@ -124,3 +124,103 @@ result = votes.reduce(Hash.new(0)) do |accumalator, vote|
 end
 
 puts result
+
+=begin
+ # PREDICATE METHODS => Predicate methods are methods that returns boolean result
+ 
+ # COMMON PREDICATE METHODS
+ include? => Returns true if an element in the parameter is included in the array or hash
+ all? => Returns true if all the elements behave according to the condition, one false will result in false value being returned
+ any? => If any of the elements in the hash or array returns true, it will return true
+ none? => Opposite of all, where it will return true only when the condition is not met
+=end
+
+# INCLUDE WITHOUT PREDICATE METHODS
+puts"\nInclude without predicate methods"
+include_example = [1,2,34,5,6,7,8,9]
+target = 6
+include_result = false
+
+include_example.each do |element|
+    if element == target 
+        include_result = true
+        break
+    end
+end
+
+puts include_result
+
+puts"\nInclude with predicate methods"
+puts include_example.include?(target)
+
+
+puts"\nAll without predicate methods"
+all_example = [1,2,34,5,6,7,8,9]
+all_result = false
+
+all_example.each do |element|
+    if element >= 1 
+        all_result = true
+    end
+end
+
+puts all_result
+
+puts"\nAll with predicate methods"
+puts all_example.all? { |element| element >= 1 }
+
+puts"\nAny without predicate methods"
+any_example = [1,2,34,5,6,7,8,9]
+any_result = false
+
+any_example.each do |element|
+    if element > 30 
+        any_result = true
+        break
+    end
+end
+
+puts any_result
+
+puts"\nAny with predicate methods"
+puts all_example.all? { |element| element >= 1 }
+
+puts"\nNone without predicate methods"
+none_example = [1,2,34,5,6,7,8,9]
+none_result = true
+
+none_example.each do |element|
+    if element > 30 
+        none_result = false
+        break
+    end
+end
+
+puts none_result
+
+puts"\nAny with predicate methods"
+puts none_example.none? { |element| element >= 1 }
+
+# ic_database = [
+#     {
+#         :name => "Arun Alagusunthram",
+#         :ic_string => "990330-02-5469",
+#         :gender => "male"
+#     },
+#     {
+#         :name => "Seetha valval",
+#         :ic_string => "050330-02-5469",
+#         :gender => "female"
+#     },
+#     {
+#         :name => "Seetha valval",
+#         :ic_string => "050330-02-5469",
+#         :gender => nil
+#     }
+# ]
+
+# gender_exist = ic_database.all? do |person|
+#     person.include?(:gender)
+# end
+
+# puts ("Gender property exist: #{gender_exist}")
