@@ -19,8 +19,8 @@ def cipher_text(plain_text, shift_value)
     # Break text to characters
     plain_text.chars.each do |char|
         # Convert character to numeric value
-        char_to_num = REFERENCE_TABLE.select { |symbol, value| symbol == char.to_sym }
-        char_to_num = char_to_num.values.first
+        char_to_num = REFERENCE_TABLE.select { |symbol| symbol == char.to_sym}
+        char_to_num = char_to_num.values.first # Find the hash and the first value
         # Shift the numerics
         cipher_char = cipher_algo(char_to_num, shift_value) 
         # Convert numeric value to character
